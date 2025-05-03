@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-10">
+    <h1 class="text-4xl font-extrabold font-sans text-center text-[#FF6600] mb-12 animate__animated animate__fadeInUp">Meet Our Team</h1>
+
+    <!-- Organizational Tree -->
+    <div class="flex flex-col items-center space-y-10">
+        <!-- Top Level -->
+        <div class="relative group">
+            <div class="w-48 h-50 bg-white shadow-lg rounded-xl px-6 py-4 text-center border-2 border-[#FF6600] hover:scale-110 hover:shadow-2xl hover:bg-orange-100 transition-transform duration-300 ease-in-out">
+                <img src="{{ url_for('static', filename='members/rushi.png') }}" class="w-16 h-16 rounded-full mx-auto mb-2 object-cover" />
+                <h2 class="text-xl font-bold font-sans text-[#FF6600] group-hover:text-orange-800">President</h2>
+                <p class="text-lg font-serif text-gray-700 group-hover:text-orange-600">Rushi</p>
+            </div>
+            <!-- Downward connector -->
+            <div class="absolute top-full left-1/2 transform -translate-x-1/2 h-10 w-1 bg-[#FF6600]"></div>
+        </div>
+
+        <!-- Level 2 -->
+        <div class="flex justify-center gap-8 relative">
+            <!-- Line connector across -->
+            <div class="absolute top-0 left-0 w-full h-1 bg-[#FF6600] z-0"></div>
+
+            <!-- Boxes with consistent size and animation -->
+            {% for member in [{'role': 'Marketing Chair', 'name': 'Harshitha', 'image': 'harshita.png'}, 
+                              {'role': 'Treasurer', 'name': 'Shreel', 'image': 'shreel.png'}, 
+                              {'role': 'VH Coordinator', 'name': 'Eisha', 'image': 'risha.jpg'}, 
+                              {'role': 'Events Co-Chair', 'name': 'Siya', 'image': 'siya.png'}, 
+                              {'role': 'Events Co-Chair', 'name': 'Ria', 'image': 'ria.png'}] %}
+                <div class="relative z-10">
+                    <div class="w-48 h-50 bg-white shadow-lg rounded-xl px-6 py-4 text-center border-2 border-[#FF6600] hover:scale-110 hover:shadow-2xl hover:bg-orange-100 transition-transform duration-300 ease-in-out">
+                        <img src="{{ url_for('static', filename='members/' ~ member.image) }}" class="w-16 h-16 rounded-full mx-auto mb-2 object-cover" />
+                        <h2 class="text-lg font-bold font-sans text-[#FF6600]">{{ member.role }}</h2>
+                        <p class="text-lg font-serif text-gray-700">{{ member.name }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Unconnected Boxes -->
+        <div class="grid grid-cols-3 gap-8 mt-10">
+            <!-- Unconnected Boxes with consistent size and animation -->
+            {% for member in [{'role': 'Secretary', 'name': 'Amirtha', 'image': 'amirtha.jpeg'}, 
+                              {'role': 'VH Funding Coordinator', 'name': 'Aashma', 'image': 'aashma.png'}, 
+                              {'role': 'Religious Coordinator', 'name': 'Dhruva', 'image': 'dhruva.png'}, 
+                              {'role': 'Temple Coordinator', 'name': 'Nishchay', 'image': 'nischay.png'}, 
+                              {'role': 'Hang With HY Coordinator', 'name': 'Ashrith', 'image': 'WhatsApp Image 2025-05-02 at 11.18.56 PM.jpeg'}, 
+                              {'role': 'Senior Advisor', 'name': 'Chhavi', 'image': 'unconnected5.jpg'}, 
+                              {'role': 'Finance Advisor', 'name': 'Prakhar', 'image': 'prakhar.png'}, 
+                              {'role': 'Finance Advisor', 'name': 'Soham', 'image': ''}, 
+                              {'role': 'Advisor', 'name': 'Sunit', 'image': 'unconnected6.jpg'}] %}
+                <div class="w-48 h-50 bg-white shadow-lg rounded-xl px-6 py-4 text-center border-2 border-[#FF6600] hover:scale-110 hover:shadow-2xl hover:bg-orange-100 transition-transform duration-300 ease-in-out">
+                    <img src="{{ url_for('static', filename='members/' ~ member.image) }}" class="w-16 h-16 rounded-full mx-auto mb-2 object-cover" />
+                    <h2 class="text-lg font-bold font-sans text-[#FF6600]">{{ member.role }}</h2>
+                    <p class="text-lg font-serif text-gray-700">{{ member.name }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class 
+{% endblock %}

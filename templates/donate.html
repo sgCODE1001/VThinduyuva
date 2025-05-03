@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="flex flex-col items-center justify-center mt-10 px-4">
+    <h1 class="text-4xl font-extrabold font-sans text-[#FF6600] animate__animated animate__fadeInUp text-center">
+        Donate & Buy Tickets
+    </h1>
+    <p class="text-xl text-gray-700 font-serif mt-4 mb-10 max-w-2xl text-center">
+        
+    </p>
+
+    <!-- Box Container -->
+    <div class="w-full max-w-3xl space-y-12">
+
+        <!-- Tickets Box -->
+        <div class="bg-white shadow-xl rounded-2xl border border-orange-200 p-8">
+            <h2 class="text-2xl font-bold font-sans text-[#FF6600] mb-4">Tickets</h2>
+            <p class="text-lg text-gray-700 font-serif mb-6">
+                Get your tickets for our upcoming events and festivals! Join us and celebrate!
+            </p>
+            <div class="flex justify-center">
+                <a href="https://linktr.ee/hinduyuvavt" target="_blank"
+                   class="mt-6 inline-block bg-[#FF6600] text-white py-3 px-8 rounded-lg shadow-md hover:bg-[#e65c00] transition-all duration-300 animate__animated animate__bounce">
+                    Buy Tickets Now
+                </a>
+            </div>
+        </div>
+
+        <!-- Donate Box -->
+        <div class="bg-white shadow-xl rounded-2xl border border-purple-200 p-8">
+            <h2 class="text-2xl font-bold font-sans text-[#FF6600] mb-4">Donate</h2>
+            <p class="text-lg text-gray-700 font-serif mb-6">
+                Your generous donation will help fund our events, outreach programs, and more! 
+                Please donate to support our cause. Every little bit helps!
+            </p>
+            <div class="flex justify-center">
+                <a href="https://donate.stripe.com/bIY29Wgs58KgfJe5kn" target="_blank"
+                   class="bg-[#635BFF] text-white py-3 px-8 rounded-lg shadow-md hover:bg-[#5145CD] transition-all duration-300 animate__animated animate__bounce inline-block">
+                    Donate 
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

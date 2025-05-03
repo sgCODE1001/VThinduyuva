@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindu YUVA at Virginia Tech</title>
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Tailwind CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+       
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+       
+        @keyframes glowing {
+            0% { text-shadow: 0 0 5px #FF6600, 0 0 10px #FF6600, 0 0 15px #FF6600, 0 0 20px #FF6600; }
+            50% { text-shadow: 0 0 10px #FF6600, 0 0 20px #FF6600, 0 0 30px #FF6600, 0 0 40px #FF6600; }
+            100% { text-shadow: 0 0 5px #FF6600, 0 0 10px #FF6600, 0 0 15px #FF6600, 0 0 20px #FF6600; }
+        }
+
+        .fade-in {
+            animation: fadeIn 2s ease-out;
+        }
+
+        .glowing-text {
+            animation: glowing 1.5s infinite alternate;
+            color: #FF6600;
+        }
+
+        /* Bounce animation for hover effect */
+        @keyframes hoverBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .hover-bounce:hover {
+            animation: hoverBounce 0.5s ease-in-out;
+        }
+
+    </style>
+</head>
+<body class="bg-[#FFF3E0] font-roboto">
+    
+    <nav class="bg-[#FEFCF6] p-4 shadow-md flex items-center justify-between">
+        
+        <div class="flex items-center space-x-3">
+            
+            <a href="/">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Hindu YUVA Logo" class="h-10 w-10 object-contain square-full hover-bounce">
+            </a>
+           
+            <span class="text-black text-xl font-bold hover-bounce">Hindu YUVA at VT</span>
+        </div>
+
+        
+        <ul class="flex space-x-6 text-white font-medium">
+            <li><a href="/" class="transition-all duration-300 transform text-black hover:text-orange-600 hover-bounce">Home</a></li>
+            <li><a href="/members" class="transition-all duration-300 transform text-black hover:text-orange-600 hover-bounce">Members</a></li>
+            <li><a href="/tickets" class="transition-all duration-300 transform text-black hover:text-orange-600 hover-bounce">Tickets/Donate</a></li>
+        </ul>
+    </nav>
+
+    
+    <div class="container mx-auto p-8 fade-in">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer class="bg-[#FF6600] p-4 mt-10 text-center text-white shadow-lg">
+        <p>&copy; Hindu YUVA at Virginia Tech</p>
+    </footer>
+</body>
+</html>
